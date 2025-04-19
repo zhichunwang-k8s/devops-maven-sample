@@ -43,7 +43,7 @@ pipeline {
                             sh 'mvn sonar:sonar \
                                   -Dsonar.projectKey=kubesphere \
                                   -Dsonar.host.url=http://10.0.0.100:12349 \
-                                  -Dsonar.login=0ecbfa70ba1fd1fb128376c17f4b56e5bfce6f64'
+                                  -Dsonar.login=8c7361f611c25d54b45a84c91507a8780a25d4f4'
                         }
                     }
                     timeout(time: 1, unit: 'HOURS') {
