@@ -17,6 +17,7 @@ pipeline {
         DOCKERHUB_NAMESPACE = 'wangzhichun'
         GITHUB_ACCOUNT = '99699754@qq.com'
         APP_NAME = 'devops-maven-sample'
+        SONAR_CREDENTIAL_ID= 'sonar-token'
     }
 
     stages {
