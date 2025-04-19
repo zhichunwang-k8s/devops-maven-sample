@@ -46,12 +46,16 @@ pipeline {
                                   -Dsonar.login=8c7361f611c25d54b45a84c91507a8780a25d4f4'
                         }
                     }
-                    timeout(time: 1, unit: 'HOURS') {
-                        waitForQualityGate abortPipeline: true
-                    }
-                }
+                 }  
             }
-        }
+         }
+         stage("Quality Gate") {
+            steps {
+              timeout(time: 1, unit: 'HOURS') {
+                waitForQualityGate abortPipeline: true
+              }
+            }
+          }
 
         stage('build & push') {
             steps {
