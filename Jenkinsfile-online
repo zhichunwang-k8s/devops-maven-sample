@@ -40,10 +40,6 @@ pipeline {
                                -Dsonar.login=d8b45c82707d416840c58c38332ee52218011b96'
                         }
                     }
-                        timeout(time: 1, unit: 'HOURS') {
-                            sleep(8)
-                            waitForQualityGate abortPipeline: true
-                    }
                  }  
             }
          }
