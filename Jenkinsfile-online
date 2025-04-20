@@ -35,19 +35,19 @@ pipeline {
             }
         }
 
-       stage('sonarqube analysis') {
+         stage('sonarqube analysis') {
             steps {
                 container('maven') {
                     withCredentials([string(credentialsId: "$SONAR_CREDENTIAL_ID", variable: 'SONAR_TOKEN')]) {
                         withSonarQubeEnv('sonar') {
-                         sh 'mvn sonar:sonar \
+                            sh 'mvn sonar:sonar \
                                -Dsonar.projectKey=devops-maven-sample \
                                -Dsonar.host.url=http://10.0.0.100:30081 \
                                -Dsonar.login=d8b45c82707d416840c58c38332ee52218011b96'
                         }
                     }
-                       timeout(time: 1, unit: 'HOURS') {
-                        waitForQualityGate abortPipeline: true
+                        timeout(time: 1, unit: 'HOURS') {
+                            waitForQualityGate abortPipeline: true
                     }
                  }  
             }
