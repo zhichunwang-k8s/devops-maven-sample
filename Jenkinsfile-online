@@ -43,7 +43,7 @@ pipeline {
                             sh 'mvn sonar:sonar \
                                -Dsonar.projectKey=devops-maven-sample \
                                -Dsonar.host.url=http://10.0.0.101:30081 \
-                               -Dsonar.login=ef213e28dd1fcd33f8f6378a26882977a50a5e60'
+                               -Dsonar.login=85e15b136c21f2f885966c7dc57dbcabbe663561'
                         }
                     }
                         timeout(unit: 'HOURS', activity: true, time: 1) {
